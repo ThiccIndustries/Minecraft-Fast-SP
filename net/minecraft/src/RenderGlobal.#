@@ -1,0 +1,72 @@
+***************
+*** 507,513 ****
+              do
+              {
+                  Profiler.func_40661_c("occ");
+-                 byte byte0 = l;
+                  l *= 2;
+                  if(l > field_1445_n.length)
+                  {
+--- 507,513 ----
+              do
+              {
+                  Profiler.func_40661_c("occ");
++                 int byte0 = l;
+                  l *= 2;
+                  if(l > field_1445_n.length)
+                  {
+***************
+*** 831,837 ****
+          float f7 = 0.0F;
+          float f9 = 0.0F;
+          float f12 = 0.0F;
+-         GL11.glColor4f(1.0F, 1.0F, 1.0F, d);
+          GL11.glTranslatef(f7, f9, f12);
+          GL11.glRotatef(-90F, 0.0F, 1.0F, 0.0F);
+          GL11.glRotatef(field_1448_k.func_619_c(p_4142_1_) * 360F, 1.0F, 0.0F, 0.0F);
+--- 831,837 ----
+          float f7 = 0.0F;
+          float f9 = 0.0F;
+          float f12 = 0.0F;
++         GL11.glColor4f(1.0F, 1.0F, 1.0F, (float) d);
+          GL11.glTranslatef(f7, f9, f12);
+          GL11.glRotatef(-90F, 0.0F, 1.0F, 0.0F);
+          GL11.glRotatef(field_1448_k.func_619_c(p_4142_1_) * 360F, 1.0F, 0.0F, 0.0F);
+***************
+*** 845,853 ****
+          tessellator1.func_982_a();
+          f15 = 20F;
+          GL11.glBindTexture(3553, field_1447_l.func_1070_a("/terrain/moon_phases.png"));
+-         float f18 = field_1448_k.func_40475_d(p_4142_1_);
+-         int l = f18 % 4;
+-         int i1 = (f18 / 4) % 2;
+          float f24 = (float)(l + 0) / 4F;
+          float f25 = (float)(i1 + 0) / 2.0F;
+          float f26 = (float)(l + 1) / 4F;
+--- 845,853 ----
+          tessellator1.func_982_a();
+          f15 = 20F;
+          GL11.glBindTexture(3553, field_1447_l.func_1070_a("/terrain/moon_phases.png"));
++         int i18 = field_1448_k.func_40475_d(p_4142_1_);
++         int l = i18 % 4;
++         int i1 = (i18 / 4) % 2;
+          float f24 = (float)(l + 0) / 4F;
+          float f25 = (float)(i1 + 0) / 2.0F;
+          float f26 = (float)(l + 1) / 4F;
+***************
+*** 859,865 ****
+          tessellator1.func_983_a(-f15, -100D, -f15, f26, f25);
+          tessellator1.func_982_a();
+          GL11.glDisable(3553);
+-         f18 = field_1448_k.func_679_f(p_4142_1_) * d;
+          if(f18 > 0.0F)
+          {
+              GL11.glColor4f(f18, f18, f18, f18);
+--- 859,865 ----
+          tessellator1.func_983_a(-f15, -100D, -f15, f26, f25);
+          tessellator1.func_982_a();
+          GL11.glDisable(3553);
++         float f18 = (float) (field_1448_k.func_679_f(p_4142_1_) * d);
+          if(f18 > 0.0F)
+          {
+              GL11.glColor4f(f18, f18, f18, f18);

@@ -1,0 +1,17 @@
+***************
+*** 38,44 ****
+          int j = aobj.length;
+          for(int k = 0; k < j; k++)
+          {
+-             EnumOptions enumoptions = aobj[k];
+              if(!enumoptions.func_20136_a())
+              {
+                  field_949_e.add(new GuiSmallButton(enumoptions.func_20135_c(), (field_951_c / 2 - 155) + (i % 2) * 160, field_950_d / 6 + 24 * (i >> 1), enumoptions, field_22109_i.func_1043_a(enumoptions)));
+--- 38,44 ----
+          int j = aobj.length;
+          for(int k = 0; k < j; k++)
+          {
++             EnumOptions enumoptions = (EnumOptions) aobj[k];
+              if(!enumoptions.func_20136_a())
+              {
+                  field_949_e.add(new GuiSmallButton(enumoptions.func_20135_c(), (field_951_c / 2 - 155) + (i % 2) * 160, field_950_d / 6 + 24 * (i >> 1), enumoptions, field_22109_i.func_1043_a(enumoptions)));
