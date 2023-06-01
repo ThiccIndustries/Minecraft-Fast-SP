@@ -1,0 +1,17 @@
+***************
+*** 1678,1684 ****
+          tessellator.func_35835_b(p_35929_1_.func_35275_c(field_1772_a, p_35929_2_, p_35929_3_, p_35929_4_));
+          int j = p_35929_1_.func_207_d(field_1772_a, p_35929_2_, p_35929_3_, p_35929_4_);
+          float f1 = (float)(j >> 16 & 0xff) / 255F;
+-         double d = (float)(j >> 8 & 0xff) / 255F;
+          float f2 = (float)(j & 0xff) / 255F;
+          tessellator.func_987_a(f * f1, f * d, f * f2);
+          j = (i & 0xf) << 4;
+--- 1678,1684 ----
+          tessellator.func_35835_b(p_35929_1_.func_35275_c(field_1772_a, p_35929_2_, p_35929_3_, p_35929_4_));
+          int j = p_35929_1_.func_207_d(field_1772_a, p_35929_2_, p_35929_3_, p_35929_4_);
+          float f1 = (float)(j >> 16 & 0xff) / 255F;
++         float d = (float)(j >> 8 & 0xff) / 255F;
+          float f2 = (float)(j & 0xff) / 255F;
+          tessellator.func_987_a(f * f1, f * d, f * f2);
+          j = (i & 0xf) << 4;
