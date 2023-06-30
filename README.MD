@@ -1,6 +1,7 @@
 # Minecraft Fast SP
 ### About:
 A singleplayer mod of Minecraft 1.2.5 with aggressive optimization for slow computers.
+If you're wondering why this is a source mod and not ModLoader or something, its because im dumb and this is easier.
 ### Requirements:
 * Java 1.5.0_22
 * 128mb of ram
