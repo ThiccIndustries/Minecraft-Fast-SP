@@ -2458,7 +2458,7 @@ public abstract class Minecraft implements Runnable
     {
         boolean flag = false;
         String s = par0Str;
-        Frame frame = new Frame("Minecraft ThiccMod");
+        Frame frame = new Frame("Minecraft FastSP");
         Canvas canvas = new Canvas();
         frame.setLayout(new BorderLayout());
         frame.add(canvas, "Center");
