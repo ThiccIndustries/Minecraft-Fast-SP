@@ -22,6 +22,7 @@ Run from command line:
 * Park entities beyond a certain distance
 * Stop random chunk updates beyond a certain distance
 * Apply chunk render distance vertically as well
+* Preload all textures into VRAM
 
 Modifications are licensed under the:
 ThiccIndustries do-whatever-you-want-I-dont-care license
