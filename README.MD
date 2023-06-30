@@ -7,7 +7,7 @@ A singleplayer mod of Minecraft 1.2.5 with aggressive optimization for slow comp
 ### Usage:
 Launcher use:
 
-Replace minecraft.jar with modded version:
+Replace minecraft.jar with modded version:  
 ``[Mac] ~/Library/Application Support/Minecraft/bin``  
 ``[Windows] %appdata%\.minecraft\bin``  
 ``[Linux] ~/.minecraft/bin``  
