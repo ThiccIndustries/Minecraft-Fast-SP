@@ -3,6 +3,7 @@
 A singleplayer mod of Minecraft 1.2.5 with aggressive optimization for slow computers.  
 Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer.  
 If you're wondering why this is a source mod and not ModLoader or something, its because im dumb and this is easier.
+Code Obfuscation is evil anyways.
 ### Requirements:
 * Java 1.5.0_22
 * 512mb of ram
