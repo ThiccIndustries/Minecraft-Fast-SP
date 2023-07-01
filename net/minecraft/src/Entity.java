@@ -521,7 +521,8 @@ public abstract class Entity
     	
     	double bounds = ((worldObj.getWorldInfo().getWorldSize() - 1) * 16) - 1f/3f;
     	double negbounds = -((worldObj.getWorldInfo().getWorldSize() - 2) * 16) + 1f/3f;
-
+    	
+    	
     	if(posX + par1 > bounds){
     		par1 = bounds - posX;
     	}
@@ -640,7 +641,6 @@ public abstract class Entity
         }
 
         List list = worldObj.getCollidingBoundingBoxes(this, boundingBox.addCoord(par1, par3, par5));
-
         for (int i = 0; i < list.size(); i++)
         {
             par3 = ((AxisAlignedBB)list.get(i)).calculateYOffset(boundingBox, par3);

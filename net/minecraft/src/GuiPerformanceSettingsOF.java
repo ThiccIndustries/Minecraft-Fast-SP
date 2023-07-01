@@ -38,7 +38,7 @@ public class GuiPerformanceSettingsOF extends GuiScreen
             EnumOptions enumoptions = aenumoptions[k];
             int l = (width / 2 - 155) + (i % 2) * 160;
             int i1 = (height / 6 + 21 * (i / 2)) - 10;
-            if(i >= 4){
+            if(i >= 5){
             	i1 += 10;
             }
             if (!enumoptions.getEnumFloat())
@@ -155,7 +155,13 @@ public class GuiPerformanceSettingsOF extends GuiScreen
                         "but decreases suttering"
                     });
     	}
-    	
+    	if(s.equals("Render Distance Cube")){
+    		return (new String[]
+                    {
+                        "Apply render distance vertically",
+                        "Increases FPS but may cause studdering"
+                    });
+    	}
     	if(s.equals("Entity Distance")){
             return (new String[]
                     {
@@ -270,8 +276,15 @@ public class GuiPerformanceSettingsOF extends GuiScreen
     {
         enumOptions = (new EnumOptions[]
                 {
-                    EnumOptions.ENTITY_DISTANCE, EnumOptions.RANDOM_UPDATES, EnumOptions.PRELOAD_TEXTURES, EnumOptions.ALLOW_OCCLUSION, EnumOptions.SMOOTH_FPS, EnumOptions.SMOOTH_INPUT, EnumOptions.LOAD_FAR, EnumOptions.PRELOADED_CHUNKS, EnumOptions.CHUNK_UPDATES,
-                    EnumOptions.CHUNK_UPDATES_DYNAMIC,EnumOptions.FAST_DEBUG_INFO, EnumOptions.PROFILER, EnumOptions.WEATHER, EnumOptions.TIME, EnumOptions.FULLSCREEN_MODE, EnumOptions.AUTOSAVE_TICKS
+                    EnumOptions.ENTITY_DISTANCE, EnumOptions.RANDOM_UPDATES,
+                    EnumOptions.PRELOAD_TEXTURES,EnumOptions.ALLOW_OCCLUSION,
+                    EnumOptions.VERTICAL_RENDER_DISTANCE, 
+                    EnumOptions.SMOOTH_FPS, EnumOptions.SMOOTH_INPUT,
+                    EnumOptions.LOAD_FAR,
+                    EnumOptions.CHUNK_UPDATES, EnumOptions.CHUNK_UPDATES_DYNAMIC,
+                    EnumOptions.FAST_DEBUG_INFO, EnumOptions.PROFILER,
+                    EnumOptions.WEATHER, EnumOptions.TIME,
+                    EnumOptions.FULLSCREEN_MODE, EnumOptions.AUTOSAVE_TICKS
                 });
 
     }

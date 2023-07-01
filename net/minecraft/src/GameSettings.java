@@ -174,6 +174,7 @@ public class GameSettings
     /** Thicc Industries Preformance settings */
     public boolean preloadTextures;
     public boolean allowOcc;
+    public boolean verticalRenderDistance;
     public int entityDistance;
     public int randomUpdateDistance;
     public float avgChunkTime;	//Not a setting per say, but the best place to put it.
@@ -293,6 +294,7 @@ public class GameSettings
         language = "en_US";
         
         preloadTextures = true;
+        verticalRenderDistance = true;
         entityDistance = 16;
         randomUpdateDistance = 2;
         allowOcc = true;
@@ -418,6 +420,7 @@ public class GameSettings
         language = "en_US";
         
         preloadTextures = true;
+        verticalRenderDistance = true;
         entityDistance = 16;
         randomUpdateDistance = 2;
         avgChunkTime = -1;
@@ -655,10 +658,14 @@ public class GameSettings
      */
     public void setOptionValue(EnumOptions par1EnumOptions, int par2)
     {
+    	
     	if(par1EnumOptions == EnumOptions.PRELOAD_TEXTURES){
     		preloadTextures = !preloadTextures;
     	}
-    	
+    	if(par1EnumOptions == EnumOptions.VERTICAL_RENDER_DISTANCE){
+    		verticalRenderDistance = !verticalRenderDistance;
+    		mc.renderGlobal.loadRenderers();
+    	}
     	if(par1EnumOptions == EnumOptions.ALLOW_OCCLUSION){
     		allowOcc = !allowOcc;
     	}
@@ -1283,7 +1290,16 @@ public class GameSettings
                 return (new StringBuilder()).append(s1).append("OFF").toString();
             }
     	}
-    	
+    	if(par1EnumOptions == EnumOptions.VERTICAL_RENDER_DISTANCE){
+            if (verticalRenderDistance)
+            {
+                return (new StringBuilder()).append(s1).append("ON").toString();
+            }
+            else
+            {
+                return (new StringBuilder()).append(s1).append("OFF").toString();
+            }
+    	}
     	if(par1EnumOptions == EnumOptions.ALLOW_OCCLUSION){
             if (allowOcc)
             {
@@ -2171,7 +2187,10 @@ public class GameSettings
                     {
                     	preloadTextures = as[1].equals("true");
                     }
-                    
+                    if (as[0].equals("verticalRender"))
+                    {
+                    	verticalRenderDistance = as[1].equals("true");
+                    }
                     if(as[0].equals("entityDistance"))
                     {
                     	entityDistance = Integer.parseInt(as[1]);
@@ -2765,6 +2784,7 @@ public class GameSettings
             printwriter.println((new StringBuilder()).append("skipUpdates:").append(randomUpdateDistance).toString());
             printwriter.println((new StringBuilder()).append("allowOcc:").append(allowOcc).toString());
             printwriter.println((new StringBuilder()).append("chunkTime:").append(avgChunkTime).toString());
+            printwriter.println((new StringBuilder()).append("verticalRender:").append(verticalRenderDistance).toString());
             
             for (int i = 0; i < keyBindings.length; i++)
             {

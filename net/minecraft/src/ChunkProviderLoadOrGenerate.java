@@ -100,7 +100,6 @@ public class ChunkProviderLoadOrGenerate implements IChunkProvider
      */
     public Chunk provideChunk(int par1, int par2)
     {
-    	System.out.println("here");
         if (par1 == lastQueriedChunkXPos && par2 == lastQueriedChunkZPos && lastQueriedChunk != null)
         {
             return lastQueriedChunk;

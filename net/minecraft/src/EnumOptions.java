@@ -3,6 +3,7 @@ package net.minecraft.src;
 public enum EnumOptions
 {
 	PRELOAD_TEXTURES("Preload Textures", false, true),
+	VERTICAL_RENDER_DISTANCE("Render Distance Cube", false, true),
 	ALLOW_OCCLUSION("Occlusion", false, true),
 	ENTITY_DISTANCE("Entity Distance", true, false),
 	RANDOM_UPDATES("Random Tick Distance", true, false),

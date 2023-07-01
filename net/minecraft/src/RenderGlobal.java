@@ -354,7 +354,7 @@ public class RenderGlobal implements IWorldAccess
         prevReposY = -9999D;
         prevReposZ = -9999D;
         renderChunksWide = j / 16 + 1;
-        renderChunksTall = 16;
+        renderChunksTall = mc.gameSettings.verticalRenderDistance ? (j / 16 + 1) : 16;
         renderChunksDeep = j / 16 + 1;
         worldRenderers = new WorldRenderer[renderChunksWide * renderChunksTall * renderChunksDeep];
         sortedWorldRenderers = new WorldRenderer[renderChunksWide * renderChunksTall * renderChunksDeep];
@@ -578,7 +578,17 @@ public class RenderGlobal implements IWorldAccess
                 for (int i2 = 0; i2 < renderChunksTall; i2++)
                 {
                     int j2 = i2 * 16;
-
+                    
+                    if(mc.gameSettings.verticalRenderDistance){
+                    	int j3 = (j2 + j) - par2;
+                    	if(j3 < 0)
+                    	{
+                    		j3 -= i - 1;
+                    	}
+                    	j3 /= i;
+                    	j2 -= j3 * i;
+                    }
+                    
                     if (j2 < minBlockY)
                     {
                         minBlockY = j2;
@@ -591,6 +601,7 @@ public class RenderGlobal implements IWorldAccess
 
                     WorldRenderer worldrenderer = worldRenderers[(j1 * renderChunksTall + i2) * renderChunksWide + k];
                     boolean flag = worldrenderer.needsUpdate;
+                    
                     worldrenderer.setPosition(l, j2, k1);
 
                     if (!flag && worldrenderer.needsUpdate)
