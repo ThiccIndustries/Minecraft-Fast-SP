@@ -5,7 +5,7 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 If you're wondering why this is a source mod and not ModLoader or something, its because im dumb and this is easier.
 ### Requirements:
 * Java 1.5.0_22
-* 128mb of ram
+* 512mb of ram
 ### Usage:
 Launcher use:
 
@@ -16,7 +16,7 @@ Replace minecraft.jar with modded version:
 
 Manual launch (need natives and lwjgl libraries):
 Run from command line:  
-``java -cp Minecraft.jar:jinput.jar:lwjgl_util.jar:lwjgl.jar -Djava.library.path=natives net.minecraft.client.Minecraft -Xmx128M``
+``java -cp Minecraft.jar:jinput.jar:lwjgl_util.jar:lwjgl.jar -Djava.library.path=natives net.minecraft.client.Minecraft -Xmx512M``
 ### Changes:
 * Worlds are generated before playing with a limited size
 * Park entities beyond a certain distance
