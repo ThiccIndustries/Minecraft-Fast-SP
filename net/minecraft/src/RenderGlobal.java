@@ -1493,12 +1493,6 @@ public class RenderGlobal implements IWorldAccess
      */
     public boolean updateRenderers(EntityLiving par1EntityLiving, boolean par2)
     {
-    	Entity p = (Entity)mc.theWorld.playerEntities.get(0);
-    	int y = (int)p.posY; 
-    	int cy;
-    	int dy;
-    	
-    	
         if (worldRenderersToUpdate.size() <= 0)
         {
             return false;
@@ -1528,11 +1522,8 @@ public class RenderGlobal implements IWorldAccess
             }
 
             l++;
-
-        	cy = worldrenderer1.posY;
-        	dy = cy - y;
-        	
-            if (dy > 48 | dy < -48 | !worldrenderer1.needsUpdate)
+            
+        	if (!worldrenderer1.needsUpdate)
             {
                 worldRenderersToUpdate.set(j1, null);
                 continue;

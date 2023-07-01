@@ -88,10 +88,10 @@ public class ChunkProviderLoadOrGenerate implements IChunkProvider
     public void preloadChunk(int par1, int par2){
     	
     }
-    
-    //TODO: user size
+
     public boolean chunkInRange(int par1, int par2){
-    	return par1 >= -4 && par1 <= 4 && par2 >= -4 && par2 <= 4;
+    	int worldSize = worldObj.getWorldInfo().getWorldSize();
+    	return par1 >= -worldSize && par1 <= worldSize && par2 >= -worldSize && par2 <= worldSize;
     }
     
     /**
