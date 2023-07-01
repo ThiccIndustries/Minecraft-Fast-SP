@@ -1,6 +1,8 @@
 # Minecraft Fast SP
 ### About:
-A singleplayer mod of Minecraft 1.2.5 with aggressive optimization for slow computers.
+A singleplayer mod of Minecraft 1.2.5 with aggressive optimization for slow computers.  
+Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer.  
+If you're wondering why this is a source mod and not ModLoader or something, its because im dumb and this is easier.
 ### Requirements:
 * Java 1.5.0_22
 * 128mb of ram
@@ -20,6 +22,7 @@ Run from command line:
 * Park entities beyond a certain distance
 * Stop random chunk updates beyond a certain distance
 * Apply chunk render distance vertically as well
+* Preload all textures into VRAM
 
 Modifications are licensed under the:
 ThiccIndustries do-whatever-you-want-I-dont-care license
