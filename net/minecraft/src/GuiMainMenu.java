@@ -132,22 +132,15 @@ public class GuiMainMenu extends GuiScreen
         //multiplayerButton.enabled = false;
         controlList.add(new GuiButton(3, width / 2 - 100, i + 24, stringtranslate.translateKey("menu.mods")));
 
-        if (mc.hideQuitButton)
-        {
-            controlList.add(new GuiButton(0, width / 2 - 100, i + 48, stringtranslate.translateKey("menu.options")));
-        }
-        else
-        {
-            controlList.add(new GuiButton(0, width / 2 - 100, i + 48 + 12, 98, 20, stringtranslate.translateKey("menu.options")));
-            controlList.add(new GuiButton(4, width / 2 + 2, i + 48 + 12, 98, 20, stringtranslate.translateKey("menu.quit")));
-        }
+        controlList.add(new GuiButton(0, width / 2 - 100, i + 48 + 12, 98, 20, stringtranslate.translateKey("menu.options")));
+        controlList.add(new GuiButton(4, width / 2 + 2, i + 48 + 12, 98, 20, stringtranslate.translateKey("menu.quit")));
 
         controlList.add(new GuiButtonLanguage(5, width / 2 - 124, i + 48 + 12));
 
-        //if (mc.session == null)
-        //{
-        //    multiplayerButton.enabled = false;
-        //}
+        if (mc.session == null)
+        {
+            multiplayerButton.enabled = false;
+        }
     }
 
     /**

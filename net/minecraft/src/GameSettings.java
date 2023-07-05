@@ -184,8 +184,8 @@ public class GameSettings
     {
     	System.out.println("new active settings");
     	active = this;
-        ofRenderDistanceFine = 128;
-        ofFogType = 1;
+        ofRenderDistanceFine = 32;
+        ofFogType = 3;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
         ofMipmapLinear = false;
@@ -197,15 +197,15 @@ public class GameSettings
         ofAoLevel = 1.0F;
         ofAaLevel = 0;
         ofAfLevel = 1;
-        ofClouds = 0;
+        ofClouds = 1;
         ofCloudsHeight = 0.0F;
-        ofTrees = 0;
-        ofGrass = 0;
-        ofRain = 0;
-        ofWater = 0;
+        ofTrees = 1;
+        ofGrass = 1;
+        ofRain = 1;
+        ofWater = 1;
         ofBetterGrass = 3;
-        ofAutoSaveTicks = 4000;
-        ofFastDebugInfo = false;
+        ofAutoSaveTicks = 36000;
+        ofFastDebugInfo = true;
         ofWeather = true;
         ofSky = true;
         ofStars = true;
@@ -219,43 +219,43 @@ public class GameSettings
         ofBetterSnow = false;
         ofFullscreenMode = "Default";
         ofSwampColors = true;
-        ofRandomMobs = true;
-        ofSmoothBiomes = true;
-        ofCustomFonts = true;
-        ofCustomColors = true;
+        ofRandomMobs = false;
+        ofSmoothBiomes = false;
+        ofCustomFonts = false;
+        ofCustomColors = false;
         ofShowCapes = true;
-        ofConnectedTextures = 2;
+        ofConnectedTextures = 0;
         ofNaturalTextures = false;
-        ofAnimatedWater = 0;
-        ofAnimatedLava = 0;
-        ofAnimatedFire = true;
-        ofAnimatedPortal = true;
-        ofAnimatedRedstone = true;
-        ofAnimatedExplosion = true;
-        ofAnimatedFlame = true;
-        ofAnimatedSmoke = true;
-        ofVoidParticles = true;
-        ofWaterParticles = true;
-        ofRainSplash = true;
-        ofPortalParticles = true;
-        ofDrippingWaterLava = true;
-        ofAnimatedTerrain = true;
-        ofAnimatedItems = true;
-        ofAnimatedTextures = true;
+        ofAnimatedWater = 2;
+        ofAnimatedLava = 2;
+        ofAnimatedFire = false;
+        ofAnimatedPortal = false;
+        ofAnimatedRedstone = false;
+        ofAnimatedExplosion = false;
+        ofAnimatedFlame = false;
+        ofAnimatedSmoke = false;
+        ofVoidParticles = false;
+        ofWaterParticles = false;
+        ofRainSplash = false;
+        ofPortalParticles = false;
+        ofDrippingWaterLava = false;
+        ofAnimatedTerrain = false;
+        ofAnimatedItems = false;
+        ofAnimatedTextures = false;
         musicVolume = 1.0F;
         soundVolume = 1.0F;
         mouseSensitivity = 0.5F;
         invertMouse = false;
         renderDistance = 0;
-        viewBobbing = true;
+        viewBobbing = false;
         anaglyph = false;
-        advancedOpengl = false;
+        advancedOpengl = true;
         limitFramerate = 1;
-        fancyGraphics = true;
-        ambientOcclusion = true;
+        fancyGraphics = false;
+        ambientOcclusion = false;
         clouds = true;
         skin = "Default";
-        renderDistance = 1;
+        renderDistance = 0;
         limitFramerate = 0;
         keyBindForward = new KeyBinding("key.forward", 17);
         keyBindLeft = new KeyBinding("key.left", 30);
@@ -290,13 +290,13 @@ public class GameSettings
         fovSetting = 0.0F;
         gammaSetting = 0.0F;
         guiScale = 0;
-        particleSetting = 0;
+        particleSetting = 2;
         language = "en_US";
         
         preloadTextures = true;
         verticalRenderDistance = true;
         entityDistance = 16;
-        randomUpdateDistance = 2;
+        randomUpdateDistance = 1;
         allowOcc = true;
         avgChunkTime = -1;
         
@@ -309,10 +309,9 @@ public class GameSettings
 
     public GameSettings()
     {
-    	System.out.println("new active settings");
     	active = this;
-        ofRenderDistanceFine = 128;
-        ofFogType = 1;
+        ofRenderDistanceFine = 32;
+        ofFogType = 3;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
         ofMipmapLinear = false;
@@ -324,15 +323,15 @@ public class GameSettings
         ofAoLevel = 1.0F;
         ofAaLevel = 0;
         ofAfLevel = 1;
-        ofClouds = 0;
+        ofClouds = 1;
         ofCloudsHeight = 0.0F;
-        ofTrees = 0;
-        ofGrass = 0;
-        ofRain = 0;
-        ofWater = 0;
+        ofTrees = 1;
+        ofGrass = 1;
+        ofRain = 1;
+        ofWater = 1;
         ofBetterGrass = 3;
-        ofAutoSaveTicks = 4000;
-        ofFastDebugInfo = false;
+        ofAutoSaveTicks = 36000;
+        ofFastDebugInfo = true;
         ofWeather = true;
         ofSky = true;
         ofStars = true;
@@ -346,43 +345,43 @@ public class GameSettings
         ofBetterSnow = false;
         ofFullscreenMode = "Default";
         ofSwampColors = true;
-        ofRandomMobs = true;
-        ofSmoothBiomes = true;
-        ofCustomFonts = true;
-        ofCustomColors = true;
+        ofRandomMobs = false;
+        ofSmoothBiomes = false;
+        ofCustomFonts = false;
+        ofCustomColors = false;
         ofShowCapes = true;
-        ofConnectedTextures = 2;
+        ofConnectedTextures = 0;
         ofNaturalTextures = false;
-        ofAnimatedWater = 0;
-        ofAnimatedLava = 0;
-        ofAnimatedFire = true;
-        ofAnimatedPortal = true;
-        ofAnimatedRedstone = true;
-        ofAnimatedExplosion = true;
-        ofAnimatedFlame = true;
-        ofAnimatedSmoke = true;
-        ofVoidParticles = true;
-        ofWaterParticles = true;
-        ofRainSplash = true;
-        ofPortalParticles = true;
-        ofDrippingWaterLava = true;
-        ofAnimatedTerrain = true;
-        ofAnimatedItems = true;
-        ofAnimatedTextures = true;
+        ofAnimatedWater = 2;
+        ofAnimatedLava = 2;
+        ofAnimatedFire = false;
+        ofAnimatedPortal = false;
+        ofAnimatedRedstone = false;
+        ofAnimatedExplosion = false;
+        ofAnimatedFlame = false;
+        ofAnimatedSmoke = false;
+        ofVoidParticles = false;
+        ofWaterParticles = false;
+        ofRainSplash = false;
+        ofPortalParticles = false;
+        ofDrippingWaterLava = false;
+        ofAnimatedTerrain = false;
+        ofAnimatedItems = false;
+        ofAnimatedTextures = false;
         musicVolume = 1.0F;
         soundVolume = 1.0F;
         mouseSensitivity = 0.5F;
         invertMouse = false;
         renderDistance = 0;
-        viewBobbing = true;
+        viewBobbing = false;
         anaglyph = false;
-        advancedOpengl = false;
+        advancedOpengl = true;
         limitFramerate = 1;
-        fancyGraphics = true;
-        ambientOcclusion = true;
+        fancyGraphics = false;
+        ambientOcclusion = false;
         clouds = true;
         skin = "Default";
-        renderDistance = 1;
+        renderDistance = 0;
         limitFramerate = 0;
         keyBindForward = new KeyBinding("key.forward", 17);
         keyBindLeft = new KeyBinding("key.left", 30);
@@ -397,10 +396,11 @@ public class GameSettings
         keyBindUseItem = new KeyBinding("key.use", -99);
         keyBindPlayerList = new KeyBinding("key.playerlist", 15);
         keyBindPickBlock = new KeyBinding("key.pickItem", -98);
+        ofKeyBindZoom = new KeyBinding("Zoom", 29);
         keyBindings = (new KeyBinding[]
                 {
                     keyBindAttack, keyBindUseItem, keyBindForward, keyBindLeft, keyBindBack, keyBindRight, keyBindJump, keyBindSneak, keyBindDrop, keyBindInventory,
-                    keyBindChat, keyBindPlayerList, keyBindPickBlock
+                    keyBindChat, keyBindPlayerList, keyBindPickBlock, ofKeyBindZoom
                 });
         difficulty = 2;
         hideGUI = false;
@@ -416,15 +416,15 @@ public class GameSettings
         fovSetting = 0.0F;
         gammaSetting = 0.0F;
         guiScale = 0;
-        particleSetting = 0;
+        particleSetting = 2;
         language = "en_US";
         
         preloadTextures = true;
         verticalRenderDistance = true;
         entityDistance = 16;
-        randomUpdateDistance = 2;
-        avgChunkTime = -1;
+        randomUpdateDistance = 1;
         allowOcc = true;
+        avgChunkTime = -1;
         
         Config.setGameSettings(this);
     }
@@ -2871,19 +2871,19 @@ public class GameSettings
 
     public void resetSettings()
     {
-        renderDistance = 1;
-        viewBobbing = true;
+        renderDistance = 0;
+        viewBobbing = false;
         anaglyph = false;
-        advancedOpengl = false;
+        advancedOpengl = true;
         limitFramerate = 0;
-        fancyGraphics = true;
-        ambientOcclusion = true;
+        fancyGraphics = false;
+        ambientOcclusion = false;
         clouds = true;
         fovSetting = 0.0F;
         gammaSetting = 0.0F;
         guiScale = 0;
         particleSetting = 0;
-        ofRenderDistanceFine = 32 << 3 - renderDistance;
+        ofRenderDistanceFine = 32;
         ofFogType = 1;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
@@ -2914,7 +2914,7 @@ public class GameSettings
         ofBetterGrass = 3;
         ofAutoSaveTicks = 4000;
         ofFastDebugInfo = false;
-        ofWeather = true;
+        ofWeather = false;
         ofSky = true;
         ofStars = true;
         ofSunMoon = true;
@@ -2927,29 +2927,29 @@ public class GameSettings
         ofBetterSnow = false;
         ofFullscreenMode = "Default";
         ofSwampColors = true;
-        ofRandomMobs = true;
-        ofSmoothBiomes = true;
-        ofCustomFonts = true;
-        ofCustomColors = true;
+        ofRandomMobs = false;
+        ofSmoothBiomes = false;
+        ofCustomFonts = false;
+        ofCustomColors = false;
         ofShowCapes = true;
         ofConnectedTextures = 2;
         ofNaturalTextures = false;
         ofAnimatedWater = 0;
         ofAnimatedLava = 0;
-        ofAnimatedFire = true;
-        ofAnimatedPortal = true;
-        ofAnimatedRedstone = true;
-        ofAnimatedExplosion = true;
-        ofAnimatedFlame = true;
-        ofAnimatedSmoke = true;
-        ofVoidParticles = true;
-        ofWaterParticles = true;
-        ofRainSplash = true;
-        ofPortalParticles = true;
-        ofDrippingWaterLava = true;
-        ofAnimatedTerrain = true;
-        ofAnimatedItems = true;
-        ofAnimatedTextures = true;
+        ofAnimatedFire = false;
+        ofAnimatedPortal = false;
+        ofAnimatedRedstone = false;
+        ofAnimatedExplosion = false;
+        ofAnimatedFlame = false;
+        ofAnimatedSmoke = false;
+        ofVoidParticles = false;
+        ofWaterParticles = false;
+        ofRainSplash = false;
+        ofPortalParticles = false;
+        ofDrippingWaterLava = false;
+        ofAnimatedTerrain = false;
+        ofAnimatedItems = false;
+        ofAnimatedTextures = false;
         mc.renderGlobal.updateCapes();
         updateWaterOpacity();
         mc.renderGlobal.setAllRenderersVisible();
@@ -2958,7 +2958,7 @@ public class GameSettings
         
         entityDistance = 16;
         preloadTextures = true;
-        randomUpdateDistance = 2;
+        randomUpdateDistance = 1;
         saveOptions();
     }
 
@@ -2967,6 +2967,6 @@ public class GameSettings
      */
     public boolean shouldRenderClouds()
     {
-        return ofRenderDistanceFine > 64 && clouds;
+        return (Config.isFogOff() || ofRenderDistanceFine > 64) && clouds;
     }
 }

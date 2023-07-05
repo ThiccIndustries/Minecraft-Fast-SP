@@ -1606,11 +1606,17 @@ public class EntityRenderer
             {
                 Profiler.endStartSection("clouds");
                 GL11.glPushMatrix();
-                setupFog(0, par1);
-                GL11.glEnable(GL11.GL_FOG);
+                
+                if(!Config.isFogOff()){
+                	setupFog(0, par1);
+                	GL11.glEnable(GL11.GL_FOG);
+                }
                 renderglobal.renderClouds(par1);
-                GL11.glDisable(GL11.GL_FOG);
-                setupFog(1, par1);
+                
+                if(!Config.isFogOff()){
+                	GL11.glDisable(GL11.GL_FOG);
+                	setupFog(1, par1);
+                }
                 GL11.glPopMatrix();
             }
 
