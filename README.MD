@@ -10,7 +10,7 @@ Code Obfuscation is evil anyways.
 ### Usage:
 Download launcher from Releases tab  
   
-Manual use (need natives and lwjgl libraries):
+Manual installation:  
 Install game using launcher of choice  
 Extract minecraft.jar from latest Update Package from Releases tab  
 Replace minecraft.jar in bin folder  
