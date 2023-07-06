@@ -8,16 +8,22 @@ Code Obfuscation is evil anyways.
 * Java 1.5.0_22
 * 512mb of ram
 ### Usage:
-Launcher use:
-
-Replace minecraft.jar with modded version:  
-``[Mac] ~/Library/Application Support/Minecraft/bin``  
-``[Windows] %appdata%\.minecraft\bin``  
-``[Linux] ~/.minecraft/bin``  
-
-Manual launch (need natives and lwjgl libraries):
+Download launcher from Releases tab  
+  
+Manual use (need natives and lwjgl libraries):
+Install game using launcher of choice  
+Extract minecraft.jar from latest Update Package from Releases tab  
+Replace minecraft.jar in bin folder  
 Run from command line:  
 ``java -cp Minecraft.jar:jinput.jar:lwjgl_util.jar:lwjgl.jar -Djava.library.path=natives net.minecraft.client.Minecraft -Xmx512M``
+
+### Updating:
+Download Update Package from Releases tab  
+Open launcher  
+select "Settings / Update"  
+select "Install Package"  
+Navigate to, and select downloaded update  
+
 ### Changes:
 * Worlds are generated before playing with a limited size
 * Park entities beyond a certain distance
