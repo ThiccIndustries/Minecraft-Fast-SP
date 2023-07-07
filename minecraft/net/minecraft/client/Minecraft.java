@@ -2166,7 +2166,7 @@ public abstract class Minecraft implements Runnable
                     loadingScreen.setLoadingProgress((i++ * 100) / j);
                 }
                 
-                ichunkprovider.preloadChunk(chunkcoordinates.posX + k, chunkcoordinates.posZ + l);
+                ichunkprovider.preloadChunk(k, l);
                 totalChunks++;
                 if (playerController.func_35643_e())
                 {

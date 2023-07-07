@@ -131,7 +131,7 @@ public class ChunkProvider implements IChunkProvider
             {
                 if (chunkProvider == null)
                 {
-                    chunk = emptyChunk;
+                	chunk = emptyChunk;
                 }
                 else
                 {
