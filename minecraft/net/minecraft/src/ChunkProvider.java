@@ -111,7 +111,6 @@ public class ChunkProvider implements IChunkProvider
             		distance2 = par2 - (i-1);
             	
             	int distance = Math.max(distance1, distance2);
-            	System.out.println(par1 + "," + par2 + "," + distance);
             	addToMap = distance <= 1;
             }
             
