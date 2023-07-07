@@ -509,7 +509,10 @@ public class World implements IBlockAccess
      */
     public int getBlockId(int par1, int par2, int par3)
     {
-        if (par1 < 0xfe363c80 || par3 < 0xfe363c80 || par1 >= 0x1c9c380 || par3 >= 0x1c9c380)
+    	
+    	int i = worldInfo.getWorldSize() * 16;
+
+        if (par1 < -i || par3 < -i || par1 >= i || par3 >= i)
         {
             return 0;
         }

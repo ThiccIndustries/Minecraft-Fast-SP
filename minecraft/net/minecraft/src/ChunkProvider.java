@@ -78,22 +78,25 @@ public class ChunkProvider implements IChunkProvider
     	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
     }
     
+    public boolean isHell(){
+    	return chunkProvider instanceof ChunkProviderHell;
+    }
     /**
      * loads or generates the chunk at the chunk location specified
      */
     public Chunk loadChunk(int par1, int par2)
     {
     	
-    	
         long l = ChunkCoordIntPair.chunkXZ2Int(par1, par2);
         droppedChunksSet.remove(Long.valueOf(l));
         Chunk chunk = (Chunk)chunkMap.getValueByKey(l);
-
+        
         if (chunk == null)
         {
             int i = worldObj.getWorldInfo().getWorldSize();
             
             boolean chunkOutOfRange = par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1);
+            
             boolean addToMap = true;
             
             if(chunkOutOfRange){

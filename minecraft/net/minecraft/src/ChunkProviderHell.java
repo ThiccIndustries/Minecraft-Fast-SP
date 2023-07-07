@@ -259,7 +259,9 @@ public class ChunkProviderHell implements IChunkProvider
     	return true;
     	//return par1 >= -4 && par1 <= 4 && par2 >= -4 && par2 <= 4;
     }
-    
+    public boolean isHell(){
+    	return true;
+    }
     /**
      * Will return back a chunk, if it doesn't exist and its not a MP client it will generates all the blocks for the
      * specified chunk from the map seed and chunk seed

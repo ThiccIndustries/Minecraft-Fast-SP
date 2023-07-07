@@ -517,7 +517,6 @@ public abstract class Entity
      */
     public void moveEntity(double par1, double par3, double par5)
     {
-    	boolean isPlayer = this == worldObj.playerEntities.get(0); //Is this entity the player?
     	double bounds = ((worldObj.getWorldInfo().getWorldSize()) * 16) - 1f/3f;
     	double negbounds = -((worldObj.getWorldInfo().getWorldSize()) * 16) + 1f/3f;
     	

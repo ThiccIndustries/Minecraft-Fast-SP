@@ -17,7 +17,9 @@ public class ChunkProviderFlat implements IChunkProvider
         useStructures = par4;
         random = new Random(par2);
     }
-
+    public boolean isHell(){
+    	return false;
+    }
     private void generate(byte par1ArrayOfByte[])
     {
         int i = par1ArrayOfByte.length / 256;

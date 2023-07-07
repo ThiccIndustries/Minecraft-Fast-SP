@@ -43,7 +43,9 @@ public class ChunkProviderLoadOrGenerate implements IChunkProvider
         curChunkX = par1;
         curChunkY = par2;
     }
-
+    public boolean isHell(){
+    	return chunkProvider instanceof ChunkProviderHell;
+    }
     /**
      * Checks if the chunk coordinate could actually be stored within the chunk cache. Args: chunkX, chunkZ
      */

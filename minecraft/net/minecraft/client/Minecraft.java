@@ -10,107 +10,7 @@ import java.awt.Graphics;
 import java.io.File;
 import java.io.PrintStream;
 import java.text.DecimalFormat;
-import net.minecraft.src.Achievement;
-import net.minecraft.src.AchievementList;
-import net.minecraft.src.AnvilSaveConverter;
-import net.minecraft.src.AxisAlignedBB;
-import net.minecraft.src.Block;
-import net.minecraft.src.BlockGrass;
-import net.minecraft.src.ChunkCoordinates;
-import net.minecraft.src.ChunkProviderLoadOrGenerate;
-import net.minecraft.src.ColorizerFoliage;
-import net.minecraft.src.ColorizerGrass;
-import net.minecraft.src.ColorizerWater;
-import net.minecraft.src.Container;
-import net.minecraft.src.EffectRenderer;
-import net.minecraft.src.EntityClientPlayerMP;
-import net.minecraft.src.EntityLiving;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.EntityPlayerSP;
-import net.minecraft.src.EntityRenderer;
-import net.minecraft.src.EnumMovingObjectType;
-import net.minecraft.src.EnumOS2;
-import net.minecraft.src.EnumOSMappingHelper;
-import net.minecraft.src.EnumOptions;
-import net.minecraft.src.FontRenderer;
-import net.minecraft.src.GLAllocation;
-import net.minecraft.src.GameSettings;
-import net.minecraft.src.GameWindowListener;
-import net.minecraft.src.GuiAchievement;
-import net.minecraft.src.GuiChat;
-import net.minecraft.src.GuiConflictWarning;
-import net.minecraft.src.GuiConnecting;
-import net.minecraft.src.GuiErrorScreen;
-import net.minecraft.src.GuiGameOver;
-import net.minecraft.src.GuiIngame;
-import net.minecraft.src.GuiIngameMenu;
-import net.minecraft.src.GuiInventory;
-import net.minecraft.src.GuiMainMenu;
-import net.minecraft.src.GuiMemoryErrorScreen;
-import net.minecraft.src.GuiParticle;
-import net.minecraft.src.GuiScreen;
-import net.minecraft.src.GuiSleepMP;
-import net.minecraft.src.ISaveFormat;
-import net.minecraft.src.InventoryPlayer;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemBlock;
-import net.minecraft.src.ItemRenderer;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.KeyBinding;
-import net.minecraft.src.LoadingScreenRenderer;
-import net.minecraft.src.MathHelper;
-import net.minecraft.src.MinecraftError;
-import net.minecraft.src.MinecraftException;
-import net.minecraft.src.MinecraftImpl;
-import net.minecraft.src.ModelBiped;
-import net.minecraft.src.MouseHelper;
-import net.minecraft.src.MovementInputFromOptions;
-import net.minecraft.src.MovingObjectPosition;
-import net.minecraft.src.NetClientHandler;
-import net.minecraft.src.OpenGlCapsChecker;
-import net.minecraft.src.OpenGlHelper;
-import net.minecraft.src.Packet3Chat;
-import net.minecraft.src.PlayerCapabilities;
-import net.minecraft.src.PlayerController;
-import net.minecraft.src.PlayerUsageSnooper;
-import net.minecraft.src.Profiler;
-import net.minecraft.src.ProfilerResult;
-import net.minecraft.src.RenderBlocks;
-import net.minecraft.src.RenderEngine;
-import net.minecraft.src.RenderGlobal;
-import net.minecraft.src.RenderManager;
-import net.minecraft.src.ScaledResolution;
-import net.minecraft.src.ScreenShotHelper;
-import net.minecraft.src.Session;
-import net.minecraft.src.SoundManager;
-import net.minecraft.src.StatCollector;
-import net.minecraft.src.StatFileWriter;
-import net.minecraft.src.StatList;
-import net.minecraft.src.StatStringFormatKeyInv;
-import net.minecraft.src.StringTranslate;
-import net.minecraft.src.Teleporter;
-import net.minecraft.src.Tessellator;
-import net.minecraft.src.TextureCompassFX;
-import net.minecraft.src.TextureFlamesFX;
-import net.minecraft.src.TextureLavaFX;
-import net.minecraft.src.TextureLavaFlowFX;
-import net.minecraft.src.TexturePackList;
-import net.minecraft.src.TexturePortalFX;
-import net.minecraft.src.TextureWatchFX;
-import net.minecraft.src.TextureWaterFX;
-import net.minecraft.src.TextureWaterFlowFX;
-import net.minecraft.src.ThreadCheckHasPaid;
-import net.minecraft.src.ThreadClientSleep;
-import net.minecraft.src.ThreadDownloadResources;
-import net.minecraft.src.Timer;
-import net.minecraft.src.UnexpectedThrowable;
-import net.minecraft.src.Vec3D;
-import net.minecraft.src.World;
-import net.minecraft.src.WorldInfo;
-import net.minecraft.src.WorldProvider;
-import net.minecraft.src.WorldRenderer;
-import net.minecraft.src.WorldSettings;
-import net.minecraft.src.WorldType;
+import net.minecraft.src.*;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Controllers;
@@ -2001,11 +1901,11 @@ public abstract class Minecraft implements Runnable
 
         if (i > -1 && thePlayer.dimension == -1)
         {
-            d2 = 0.125D;
+            d2 = 1D;
         }
         else if (i == -1 && thePlayer.dimension > -1)
         {
-            d2 = 8D;
+            d2 = 1D;
         }
 
         d *= d2;
@@ -2177,7 +2077,7 @@ public abstract class Minecraft implements Runnable
             }
 
             net.minecraft.src.IChunkProvider ichunkprovider = par1World.getChunkProvider();
-
+            
             if (ichunkprovider instanceof ChunkProviderLoadOrGenerate)
             {
                 ChunkProviderLoadOrGenerate chunkproviderloadorgenerate = (ChunkProviderLoadOrGenerate)ichunkprovider;
@@ -2239,6 +2139,7 @@ public abstract class Minecraft implements Runnable
         int j = (c * 2);
         j *= j;
         net.minecraft.src.IChunkProvider ichunkprovider = theWorld.getChunkProvider();
+        
         ChunkCoordinates chunkcoordinates = theWorld.getSpawnPoint();
 
         if (thePlayer != null)
@@ -2252,6 +2153,7 @@ public abstract class Minecraft implements Runnable
             ChunkProviderLoadOrGenerate chunkproviderloadorgenerate = (ChunkProviderLoadOrGenerate)ichunkprovider;
             chunkproviderloadorgenerate.setCurrentChunkOver(chunkcoordinates.posX >> 4, chunkcoordinates.posZ >> 4);
         }
+        
         Runtime rt = Runtime.getRuntime();
         int totalChunks = 0;
         long startTime = System.nanoTime();
@@ -2261,9 +2163,7 @@ public abstract class Minecraft implements Runnable
             {
                 if (loadingScreen != null)
                 {
-
                     loadingScreen.setLoadingProgress((i++ * 100) / j);
-                    
                 }
                 
                 ichunkprovider.preloadChunk(chunkcoordinates.posX + k, chunkcoordinates.posZ + l);

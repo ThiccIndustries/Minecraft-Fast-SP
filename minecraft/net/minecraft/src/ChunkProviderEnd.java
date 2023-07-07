@@ -32,7 +32,9 @@ public class ChunkProviderEnd implements IChunkProvider
         noiseGen4 = new NoiseGeneratorOctaves(endRNG, 10);
         noiseGen5 = new NoiseGeneratorOctaves(endRNG, 16);
     }
-
+    public boolean isHell(){
+    	return false;
+    }
     public void func_40380_a(int par1, int par2, byte par3ArrayOfByte[], BiomeGenBase par4ArrayOfBiomeGenBase[])
     {
         byte byte0 = 2;

@@ -16,7 +16,9 @@ public interface IChunkProvider
      * specified chunk from the map seed and chunk seed
      */
     public abstract Chunk provideChunk(int i, int j);
-
+    
+    public abstract boolean isHell();
+    
     /**
      * loads or generates the chunk at the chunk location specified
      */

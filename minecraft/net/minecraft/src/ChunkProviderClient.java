@@ -27,7 +27,9 @@ public class ChunkProviderClient implements IChunkProvider
         blankChunk = new EmptyChunk(par1World, 0, 0);
         worldObj = par1World;
     }
-
+    public boolean isHell(){
+    	return false;
+    }
     /**
      * Checks to see if a chunk exists at x, y
      */

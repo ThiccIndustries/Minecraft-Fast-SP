@@ -55,7 +55,9 @@ public class ChunkProviderGenerate implements IChunkProvider
     double noise6[];
     float field_35388_l[];
     int field_914_i[][];
-
+    public boolean isHell(){
+    	return false;
+    }
     public ChunkProviderGenerate(World par1World, long par2, boolean par4)
     {
         stoneNoise = new double[256];
