@@ -8,7 +8,7 @@ If you're wondering why this is a source mod and not ModLoader or something, its
 Code Obfuscation is evil anyways.
 ### Requirements:
 * Java 1.5.0_22
-* 512mb of ram
+* 256mb of ram
 ### Usage:
 Download launcher from Releases tab  
   
