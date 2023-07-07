@@ -42,7 +42,7 @@ public class BlockLog extends Block
     {
         byte byte0 = 4;
         int i = byte0 + 1;
-
+        
         if (par1World.checkChunksExist(par2 - i, par3 - i, par4 - i, par2 + i, par3 + i, par4 + i))
         {
             for (int j = -byte0; j <= byte0; j++)

@@ -94,6 +94,26 @@ public class ChunkProvider implements IChunkProvider
             int i = worldObj.getWorldInfo().getWorldSize();
             
             boolean chunkOutOfRange = par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1);
+            boolean addToMap = true;
+            
+            if(chunkOutOfRange){
+            	int distance1 = 0, distance2 = 0;
+            	if(par1 < -i)
+            		distance1 = -(par1 + i);
+            	
+            	if(par1 > (i - 1))
+            		distance1 = par1 - (i-1);
+            	
+            	if(par2 < -i)
+            		distance2 = -(par2 + i);
+            	
+            	if(par2 > (i - 1))
+            		distance2 = par2 - (i-1);
+            	
+            	int distance = Math.max(distance1, distance2);
+            	System.out.println(par1 + "," + par2 + "," + distance);
+            	addToMap = distance <= 1;
+            }
             
             if(par1 == 0 && par2 == 0)
             	chunkOutOfRange = false;
@@ -102,14 +122,14 @@ public class ChunkProvider implements IChunkProvider
             
 
             if(chunkOutOfRange){
-            	return emptyChunk;
+            	chunk = emptyChunk;
             }
             
             if (chunk == null)
             {
                 if (chunkProvider == null)
                 {
-                    return emptyChunk;
+                    chunk = emptyChunk;
                 }
                 else
                 {
@@ -117,17 +137,20 @@ public class ChunkProvider implements IChunkProvider
                     
                 }
             }
-
-            chunkMap.add(l, chunk);
-            chunkList.add(chunk);
+            
+            if(addToMap){
+            	chunkMap.add(l, chunk);
+            	chunkList.add(chunk);
+            }
 
             if (chunk != null)
             {
                 chunk.func_4143_d();
                 chunk.onChunkLoad();
             }
-
-            chunk.populateChunk(this, this, par1, par2);
+            
+            if(!chunkOutOfRange)
+            	chunk.populateChunk(this, this, par1, par2);
         }
 
         return chunk;

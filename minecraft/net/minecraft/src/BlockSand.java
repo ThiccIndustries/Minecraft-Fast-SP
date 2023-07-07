@@ -49,8 +49,8 @@ public class BlockSand extends Block
         if (canFallBelow(par1World, i, j - 1, k) && j >= 0)
         {
             byte byte0 = 32;
-
-            if (fallInstantly || !par1World.checkChunksExist(par2 - byte0, par3 - byte0, par4 - byte0, par2 + byte0, par3 + byte0, par4 + byte0))
+            //if (fallInstantly || !par1World.checkChunksExist(par2 - byte0, par3 - byte0, par4 - byte0, par2 + byte0, par3 + byte0, par4 + byte0))
+            if (fallInstantly)
             {
                 par1World.setBlockWithNotify(par2, par3, par4, 0);
 
@@ -64,6 +64,7 @@ public class BlockSand extends Block
             else if (!par1World.isRemote)
             {
                 EntityFallingSand entityfallingsand = new EntityFallingSand(par1World, (float)par2 + 0.5F, (float)par3 + 0.5F, (float)par4 + 0.5F, blockID);
+                System.out.println( entityfallingsand );
                 par1World.spawnEntityInWorld(entityfallingsand);
             }
         }

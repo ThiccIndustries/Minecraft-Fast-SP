@@ -47,7 +47,8 @@ public class BlockDragonEgg extends Block
         {
             byte byte0 = 32;
 
-            if (BlockSand.fallInstantly || !par1World.checkChunksExist(par2 - byte0, par3 - byte0, par4 - byte0, par2 + byte0, par3 + byte0, par4 + byte0))
+            //if (BlockSand.fallInstantly || !par1World.checkChunksExist(par2 - byte0, par3 - byte0, par4 - byte0, par2 + byte0, par3 + byte0, par4 + byte0))
+            if (BlockSand.fallInstantly)
             {
                 par1World.setBlockWithNotify(par2, par3, par4, 0);
 

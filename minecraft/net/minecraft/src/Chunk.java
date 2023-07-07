@@ -1135,10 +1135,9 @@ public class Chunk
     
     public void populateChunk(IChunkProvider par1IChunkProvider, IChunkProvider par2IChunkProvider, int par3, int par4)
     {
-    	if(!isTerrainPopulated && !chunkInRange(par3 + 1, par4 + 1) || !chunkInRange(par3, par4 + 1) || !chunkInRange(par3 + 1, par4)){
+    	/*if(!isTerrainPopulated && !chunkInRange(par3 + 1, par4 + 1) || !chunkInRange(par3, par4 + 1) || !chunkInRange(par3 + 1, par4)){
     		par1IChunkProvider.populate(par2IChunkProvider, par3, par4);
-    	}
-    	
+    	}*/
     	if (!isTerrainPopulated && par1IChunkProvider.chunkExists(par3 + 1, par4 + 1) && par1IChunkProvider.chunkExists(par3, par4 + 1) && par1IChunkProvider.chunkExists(par3 + 1, par4))
         {
             par1IChunkProvider.populate(par2IChunkProvider, par3, par4);

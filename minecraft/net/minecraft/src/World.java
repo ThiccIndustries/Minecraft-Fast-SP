@@ -573,7 +573,6 @@ public class World implements IBlockAccess
             return chunkExists(par1 >> 4, par3 >> 4);
         }
     }
-
     /**
      * Checks if any of the chunks within distance (argument 4) blocks of the given block exist
      */
@@ -618,7 +617,11 @@ public class World implements IBlockAccess
     {
         return chunkProvider.chunkExists(par1, par2);
     }
-
+    
+    public boolean chunkInRange(int par1, int par2){
+    	int i = getWorldInfo().getWorldSize();
+    	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
+    }
     /**
      * Returns a chunk looked up by block coordinates. Args: x, z
      */
@@ -1060,6 +1063,7 @@ public class World implements IBlockAccess
 
         int i = par2 >> 4;
         int j = par4 >> 4;
+        
 
         if (!chunkExists(i, j))
         {
@@ -1068,6 +1072,7 @@ public class World implements IBlockAccess
 
         if (Block.useNeighborBrightness[getBlockId(par2, par3, par4)])
         {
+        	
             int k = getSavedLightValue(par1EnumSkyBlock, par2, par3 + 1, par4);
             int l = getSavedLightValue(par1EnumSkyBlock, par2 + 1, par3, par4);
             int i1 = getSavedLightValue(par1EnumSkyBlock, par2 - 1, par3, par4);
@@ -1093,7 +1098,7 @@ public class World implements IBlockAccess
             {
                 k = k1;
             }
-
+            
             return k;
         }
         else
@@ -1905,7 +1910,8 @@ public class World implements IBlockAccess
     public void scheduleBlockUpdate(int par1, int par2, int par3, int par4, int par5)
     {
         NextTickListEntry nextticklistentry = new NextTickListEntry(par1, par2, par3, par4);
-        byte byte0 = 8;
+        
+        byte byte0 = 16;
 
         if (scheduledUpdatesAreImmediate)
         {
@@ -2173,18 +2179,18 @@ public class World implements IBlockAccess
     {
         int i = MathHelper.floor_double(par1Entity.posX);
         int j = MathHelper.floor_double(par1Entity.posZ);
-        byte byte0 = 32;
+        byte byte0 = 16;
         
         /*
          * Disabling this check resolves issue #1
          * I have no idea why this check is necessary, All chunks used later in the function are tested first by ChunkExists()
          * So I don't see how anything bad will happen by turning it off.
          * Leaving it here in case i'm wrong somehow.
-         *
+         */
         if (par2 && !checkChunksExist(i - byte0, 0, j - byte0, i + byte0, 0, j + byte0))
         {
             return;
-        }*/
+        }
 
         par1Entity.lastTickPosX = par1Entity.posX;
         par1Entity.lastTickPosY = par1Entity.posY;
@@ -3665,7 +3671,7 @@ public class World implements IBlockAccess
             scheduledTickTreeSet.remove(nextticklistentry);
             scheduledTickSet.remove(nextticklistentry);
             byte byte0 = 8;
-
+            
             if (!checkChunksExist(nextticklistentry.xCoord - byte0, nextticklistentry.yCoord - byte0, nextticklistentry.zCoord - byte0, nextticklistentry.xCoord + byte0, nextticklistentry.yCoord + byte0, nextticklistentry.zCoord + byte0))
             {
                 continue;

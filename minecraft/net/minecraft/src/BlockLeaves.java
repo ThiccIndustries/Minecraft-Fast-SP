@@ -88,7 +88,7 @@ public class BlockLeaves extends BlockLeavesBase
     {
         int i = 1;
         int j = i + 1;
-
+        
         if (par1World.checkChunksExist(par2 - j, par3 - j, par4 - j, par2 + j, par3 + j, par4 + j))
         {
             for (int k = -i; k <= i; k++)
