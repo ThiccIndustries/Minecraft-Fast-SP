@@ -618,12 +618,7 @@ public class World implements IBlockAccess
     {
         return chunkProvider.chunkExists(par1, par2);
     }
-    
-    //TODO: TEMP
-    public boolean chunkInRange(int par1, int par2){
-    	int i = getWorldInfo().getWorldSize();
-    	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
-    }
+
     /**
      * Returns a chunk looked up by block coordinates. Args: x, z
      */

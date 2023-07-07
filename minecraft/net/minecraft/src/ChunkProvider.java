@@ -72,8 +72,7 @@ public class ChunkProvider implements IChunkProvider
         chunkMap.remove(l);
         chunkList.remove(c);
     }
-    
-    //TODO: user size
+
     public boolean chunkInRange(int par1, int par2){
     	int i = worldObj.getWorldInfo().getWorldSize();
     	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
