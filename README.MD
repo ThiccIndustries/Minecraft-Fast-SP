@@ -1,4 +1,6 @@
 # Minecraft Fast SP
+
+### 1.0 release is still in development. Version 0.3 is a minecraft.jar replacement only. ###
 ### About:
 A singleplayer mod of Minecraft 1.2.5 with optimizations for slow computers.  
 Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer.  
@@ -6,7 +8,7 @@ If you're wondering why this is a source mod and not ModLoader or something, its
 Code Obfuscation is evil anyways.
 ### Requirements:
 * Java 1.5.0_22
-* 512mb of ram
+* 256mb of ram
 ### Usage:
 Download launcher from Releases tab  
   
