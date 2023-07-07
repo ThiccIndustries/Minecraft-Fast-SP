@@ -379,7 +379,7 @@ public class GuiCreateWorld extends GuiScreen
             
             drawString(fontRenderer, "Size", width / 2 + 55, 47, 0xa0a0a0);
             
-            Integer total = ((size * 2) + 1) * ((size * 2) + 1);
+            Integer total = ((size * 2)) * ((size * 2));
             drawString(fontRenderer, "Total Chunks: ", width / 2 - 100, 85, 0xa0a0a0);
             drawString(fontRenderer, total.toString(), width / 2 - 30, 85, 0xaaaaaa);
             

@@ -2236,7 +2236,7 @@ public abstract class Minecraft implements Runnable
         }
 
         int i = 0;
-        int j = (c * 2) + 1;
+        int j = (c * 2);
         j *= j;
         net.minecraft.src.IChunkProvider ichunkprovider = theWorld.getChunkProvider();
         ChunkCoordinates chunkcoordinates = theWorld.getSpawnPoint();
@@ -2255,9 +2255,9 @@ public abstract class Minecraft implements Runnable
         Runtime rt = Runtime.getRuntime();
         int totalChunks = 0;
         long startTime = System.nanoTime();
-        for (int k = -c; k <= c; k ++)
+        for (int k = -c; k < c; k ++)
         {
-            for (int l = -c; l <= c; l ++)
+            for (int l = -c; l < c; l ++)
             {
                 if (loadingScreen != null)
                 {

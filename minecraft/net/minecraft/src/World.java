@@ -618,7 +618,12 @@ public class World implements IBlockAccess
     {
         return chunkProvider.chunkExists(par1, par2);
     }
-
+    
+    //TODO: TEMP
+    public boolean chunkInRange(int par1, int par2){
+    	int i = getWorldInfo().getWorldSize();
+    	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
+    }
     /**
      * Returns a chunk looked up by block coordinates. Args: x, z
      */
@@ -2174,11 +2179,17 @@ public class World implements IBlockAccess
         int i = MathHelper.floor_double(par1Entity.posX);
         int j = MathHelper.floor_double(par1Entity.posZ);
         byte byte0 = 32;
-
+        
+        /*
+         * Disabling this check resolves issue #1
+         * I have no idea why this check is necessary, All chunks used later in the function are tested first by ChunkExists()
+         * So I don't see how anything bad will happen by turning it off.
+         * Leaving it here in case i'm wrong somehow.
+         *
         if (par2 && !checkChunksExist(i - byte0, 0, j - byte0, i + byte0, 0, j + byte0))
         {
             return;
-        }
+        }*/
 
         par1Entity.lastTickPosX = par1Entity.posX;
         par1Entity.lastTickPosY = par1Entity.posY;

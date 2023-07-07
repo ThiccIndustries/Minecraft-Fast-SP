@@ -75,7 +75,7 @@ public class Chunk
         xPosition = par2;
         zPosition = par3;
         heightMap = new int[256];
-
+        
         for (int i = 0; i < entityLists.length; i++)
         {
             entityLists[i] = new ArrayList();
@@ -84,6 +84,7 @@ public class Chunk
         Arrays.fill(precipitationHeightMap, -999);
         Arrays.fill(blockBiomeArray, (byte) - 1);
     }
+
 
     public Chunk(World par1World, byte par2ArrayOfByte[], int par3, int par4)
     {
@@ -1127,9 +1128,17 @@ public class Chunk
             }
         }
     }
-
+    public boolean chunkInRange(int par1, int par2){
+    	int i = worldObj.getWorldInfo().getWorldSize();
+    	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
+    }
+    
     public void populateChunk(IChunkProvider par1IChunkProvider, IChunkProvider par2IChunkProvider, int par3, int par4)
     {
+    	if(!isTerrainPopulated && !chunkInRange(par3 + 1, par4 + 1) || !chunkInRange(par3, par4 + 1) || !chunkInRange(par3 + 1, par4)){
+    		par1IChunkProvider.populate(par2IChunkProvider, par3, par4);
+    	}
+    	
     	if (!isTerrainPopulated && par1IChunkProvider.chunkExists(par3 + 1, par4 + 1) && par1IChunkProvider.chunkExists(par3, par4 + 1) && par1IChunkProvider.chunkExists(par3 + 1, par4))
         {
             par1IChunkProvider.populate(par2IChunkProvider, par3, par4);

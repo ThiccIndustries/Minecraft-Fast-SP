@@ -75,8 +75,8 @@ public class ChunkProvider implements IChunkProvider
     
     //TODO: user size
     public boolean chunkInRange(int par1, int par2){
-    	int worldSize = worldObj.getWorldInfo().getWorldSize();
-    	return par1 >= -worldSize && par1 <= worldSize && par2 >= -worldSize && par2 <= worldSize;
+    	int i = worldObj.getWorldInfo().getWorldSize();
+    	return !(par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1));
     }
     
     /**
@@ -85,6 +85,7 @@ public class ChunkProvider implements IChunkProvider
     public Chunk loadChunk(int par1, int par2)
     {
     	
+    	
         long l = ChunkCoordIntPair.chunkXZ2Int(par1, par2);
         droppedChunksSet.remove(Long.valueOf(l));
         Chunk chunk = (Chunk)chunkMap.getValueByKey(l);
@@ -92,18 +93,24 @@ public class ChunkProvider implements IChunkProvider
         if (chunk == null)
         {
             int i = worldObj.getWorldInfo().getWorldSize();
-
-            if (par1 < -i || par2 < -i || par1 > i || par2 > i)
-            {
-                return emptyChunk;
-            }
-
+            
+            boolean chunkOutOfRange = par1 < -i || par2 < -i || par1 > (i - 1) || par2 > (i - 1);
+            
+            if(par1 == 0 && par2 == 0)
+            	chunkOutOfRange = false;
+            
             chunk = loadChunkFromFile(par1, par2);
+            
+
+            if(chunkOutOfRange){
+            	return emptyChunk;
+            }
+            
             if (chunk == null)
             {
                 if (chunkProvider == null)
                 {
-                    chunk = emptyChunk;
+                    return emptyChunk;
                 }
                 else
                 {
