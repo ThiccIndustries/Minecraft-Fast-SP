@@ -335,7 +335,8 @@ public class GuiCreateWorld extends GuiScreen
         }
 
         ((GuiButton)controlList.get(0)).enabled = textboxWorldName.getText().length() > 0;
-        ((GuiButton)controlList.get(0)).enabled = textboxSize.getText().length() > 0;
+        ((GuiButton)controlList.get(0)).enabled = textboxSize.getText().length() > 0 && size >= 4;
+        
         makeUseableName();
     }
     
@@ -380,8 +381,13 @@ public class GuiCreateWorld extends GuiScreen
             drawString(fontRenderer, "Size", width / 2 + 55, 47, 0xa0a0a0);
             
             Integer total = ((size * 2)) * ((size * 2));
-            drawString(fontRenderer, "Total Chunks: ", width / 2 - 100, 85, 0xa0a0a0);
-            drawString(fontRenderer, total.toString(), width / 2 - 30, 85, 0xaaaaaa);
+            
+            if(size < 4)
+            	drawString(fontRenderer, "Size must be >= 4", width / 2 - 100, 85, 0xa00000);
+            else{
+            	drawString(fontRenderer, "Total Chunks: ", width / 2 - 100, 85, 0xa0a0a0);
+            	drawString(fontRenderer, total.toString(), width / 2 - 30, 85, 0xaaaaaa);
+            }
             
             StringBuilder s = new StringBuilder();
             String formattedLoadTime = String.format("%.4f", mc.gameSettings.avgChunkTime);
