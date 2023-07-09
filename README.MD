@@ -4,8 +4,7 @@
 ### About:
 A singleplayer mod of Minecraft 1.2.5 with optimizations for slow computers.  
 Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer.  
-If you're wondering why this is a source mod and not ModLoader or something, its because im dumb and this is easier.
-Code Obfuscation is evil anyways.
+This is a standalone version of the game, and won't work with any other existing mods.
 ### Requirements:
 * Java 1.5.0_22
 * 256mb of ram
