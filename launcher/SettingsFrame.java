@@ -10,6 +10,10 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -48,9 +52,8 @@ public class SettingsFrame extends JDialog{
 		upper.setLayout(new FlowLayout());
 		lower.setLayout(new FlowLayout());
 		
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout());;
 		setAlwaysOnTop(true);
-		
 		install = new JButton("Install Package");
 		restore = new JButton("Restore Backup");
 		
@@ -73,6 +76,7 @@ public class SettingsFrame extends JDialog{
 		install.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	JFileChooser chooser = new JFileChooser(System.getProperty("user.home","."));
+		    	setAlwaysOnTop(false);
 		    	FileFilter zipfilter = new FileFilter(){
 		    	    public boolean accept(File f){
 		    	        if(f.isDirectory()) return true;
@@ -89,7 +93,7 @@ public class SettingsFrame extends JDialog{
 		    		launcher.GetPackageInstaller().Install(chooser.getSelectedFile().getAbsolutePath());
 		    		restore.setEnabled(launcher.GetPackageInstaller().VerifyInstallation("/previous/"));
 		    	}
-		    	
+		    	setAlwaysOnTop(true);
 		    	launcher.mp.play.setEnabled(launcher.GetPackageInstaller().VerifyInstallation(""));
 		    }
 		});
@@ -110,16 +114,23 @@ public class SettingsFrame extends JDialog{
 		    }
 		});
 		
+
 		upper.add(install);
 		upper.add(restore);
 		
-		JLabel gameDir = new JLabel("<html><a href='.'>" + Util.getWorkingDirectory() + "</a></html>");
-		gameDir.setHorizontalAlignment(JLabel.CENTER);
-		gameDir.setPreferredSize(new Dimension(400, 16));
+		JLabel updateDir = new JLabel("<html>For updates: <a href='.'>http://github.com/ThiccIndustries/Minecraft-Fast-SP/releases");
+		upper.add(updateDir);
 		
-		gameDir.addMouseListener(new MouseListener(){
+		updateDir.setHorizontalAlignment(JLabel.CENTER);
+		updateDir.setPreferredSize(new Dimension(400, 16));
+		
+		updateDir.addMouseListener(new MouseListener(){
 		    public void mouseClicked(MouseEvent e) {
-		        Util.openLink(new File(Util.getWorkingDirectory()).toURI());
+		        try {
+					Util.openLink(new URL("http://github.com/ThiccIndustries/Minecraft-Fast-SP/releases").toURI());
+				} catch (Exception e2) {
+					System.out.println("Failed to open link.");
+				}
 		    }
 		    
 			public void mouseEntered(MouseEvent arg0) {}
@@ -127,7 +138,7 @@ public class SettingsFrame extends JDialog{
 			public void mousePressed(MouseEvent arg0) {}
 			public void mouseReleased(MouseEvent arg0) {}
 		});
-		upper.add(gameDir);
+		upper.add(updateDir);
 		
 		upper.add(separate);
 		upper.add(console);

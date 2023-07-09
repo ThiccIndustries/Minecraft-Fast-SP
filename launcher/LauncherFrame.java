@@ -128,7 +128,8 @@ public class LauncherFrame extends JFrame {
 				installed = true;
 			
 		}
-
+		
+		System.out.println("Game Directory: " + Util.getWorkingDirectory());
 		if (pi.VerifyInstallation("/previous/"))
 			System.out.println("Backup installation found.");
 
@@ -141,7 +142,7 @@ public class LauncherFrame extends JFrame {
 		if(installed){
 			System.out.println("Game installation found, ready to launch.");
 		}
-		
+		System.out.println("Please report any issues to: http://github.com/ThiccIndustries/Minecraft-Fast-SP/issues");
 		mp.play.setEnabled(installed);
 		mp.play.setText("Play Game");
 	}
