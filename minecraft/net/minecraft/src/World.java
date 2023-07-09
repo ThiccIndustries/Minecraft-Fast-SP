@@ -347,23 +347,104 @@ public class World implements IBlockAccess
             return;
         }
 
-        findingSpawnPoint = true;
-        WorldChunkManager worldchunkmanager = worldProvider.worldChunkMgr;
-        List list = worldchunkmanager.getBiomesToSpawnIn();
-        Random random = new Random(getSeed());
-        ChunkPosition chunkposition = worldchunkmanager.findBiomePosition(0, 0, 256, list, random);
-        int i = 0;
         int j = 255;
-        int k = 0;
-        
-        while(getBlockId(i, j, k) == 0){
-        	j--;
+        int ws = worldInfo.getWorldSize() - 1;
+        int cx = 0, cy = 0;
+        int cxr = 0, cyr = 0;
+
+        for(cy = 0; cy < ws; cy++){
+        	j = -1;
+	        for(cx = 0; cx < ws; cx++){
+	        	System.out.println("checking chunk: " + -cx + ", " + -cy);
+	        	int result = findRespawnHeight((-cx * 16) + 8, (-cy * 16) + 8);
+	        	if(result != -1){
+	        		cxr = cx;
+	        		cyr = cy;
+	        		j = result;
+	        		break;
+	        	}
+	        	
+	        	//-0 is 0, pos limit is one less than neg limit.
+	        	if(cx == 0 || cx == ws - 1)
+	        		continue;
+	        	
+	        	System.out.println("checking chunk: " + cx + ", " + -cy);
+	        	result = findRespawnHeight((cx * 16) + 8, (-cy * 16) + 8);
+	        	if(result != -1){
+	        		cxr = -cx;
+	        		cyr = cy;
+	        		j = result;
+	        		break;
+	        	}
+	        }
+	        
+	        if(j != -1){
+	        	System.out.println("Valid spawn.");
+	        	break;
+	        }
+	        
+	        //-0 is 0
+	        if(cy == 0 || cy == ws - 1)
+	        	continue;
+	        
+	        for(cx = 0; cx < ws; cx++){
+	        	System.out.println("checking chunk: " + -cx + ", " + cy);
+	        	int result = findRespawnHeight((-cx * 16) + 8, (cy * 16) + 8);
+	        	if(result != -1){
+	        		cxr = cx;
+	        		cyr = -cy;
+	        		j = result;
+	        		break;
+	        	}
+	        	
+	        	//-0 is 0.
+	        	if(cx == 0)
+	        		continue;
+	        	
+	        	System.out.println("checking chunk: " + cx + ", " + cy);
+	        	result = findRespawnHeight((cx * 16) + 8, (cy * 16) + 8);
+	        	if(result != -1){
+	        		cxr = -cx;
+	        		cyr = -cy;
+	        		j = result;
+	        		break;
+	        	}
+	        }
+	        
+	        if(j != -1){
+	        	System.out.println("Valid spawn.");
+	        	break;
+	        }
         }
-        j+=3; 
-        worldInfo.setSpawnPosition(i, j, k);
+        
+        if(j == -1)
+        	j = 62;
+        j+=2;
+        worldInfo.setSpawnPosition((cxr * 16) + 8, j, (cyr * 16) + 8);
         findingSpawnPoint = false;
     }
-
+    
+    public int findRespawnHeight(int x, int y){
+    	int j = 255;
+    	int result;
+    	while(j > 60){
+    		result = getBlockId(x, j, y);
+    		if(result != 0){
+        		if(result == 1 || result == 8 || result == 9 || result == 10 || result == 11){
+        			System.out.println("rejecting block");
+        			return -1;
+        		}
+        		
+        		System.out.println("good block:" + result);
+        		return j;
+    		}
+    		j--;
+    	}
+    	
+    	System.out.println("rejecting hit sea");
+    	return -1;
+    }
+    
     /**
      * Gets the hard-coded portal location to use when entering this dimension
      */
