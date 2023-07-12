@@ -118,7 +118,7 @@ public class SettingsFrame extends JDialog{
 		upper.add(install);
 		upper.add(restore);
 		
-		JLabel updateDir = new JLabel("<html>For updates: <a href='.'>http://github.com/ThiccIndustries/Minecraft-Fast-SP/releases");
+		JLabel updateDir = new JLabel("<html><a href='.'>http://github.com/ThiccIndustries/Minecraft-Fast-SP/releases</html>");
 		upper.add(updateDir);
 		
 		updateDir.setHorizontalAlignment(JLabel.CENTER);
