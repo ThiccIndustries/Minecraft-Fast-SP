@@ -1,3 +1,4 @@
+
 # Minecraft Fast SP
 
 ### About:
@@ -25,12 +26,21 @@ select "Settings / Update"
 select "Install Package"  
 Navigate to, and select downloaded update  
 
-### Changes:
+### Key Changes:
 * Worlds are generated before playing with a limited size
-* Park entities beyond a certain distance
-* Stop random chunk updates beyond a certain distance
-* Apply chunk render distance vertically as well
-* Preload all textures into VRAM
+* Entity render/tick distance configurable in settings
+* Chunk random tick update distance configurable in settings
+* Render distance can be applied vertically, as well as horizontally
+* Option to disable occlusion while still using "Advanced" OpenGL
+* Preload textures in VRAM on world startup
+
+### Results (Default settings):
+| Model        | CPU     | GPU                     | FPS     |
+|--------------|---------|-------------------------|---------|
+| Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 80-120  |
+| iBook G4     | 1.33Ghz | Radeon Mobility 9550    | 70-80   |
+| MacBook      | 2.4Ghz  | GMA X3100               | 50-60   |
+| Thinkpad T43 | 1.86Ghz | Radeon Mobility x300    | 160-180 |
 
 Modifications are licensed under the:
 ThiccIndustries do-whatever-you-want-I-dont-care license
