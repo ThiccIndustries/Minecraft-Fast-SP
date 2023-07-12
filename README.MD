@@ -6,7 +6,7 @@
 A singleplayer mod of Minecraft 1.2.5 with optimizations for slow computers.  
 Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer. 
 
-### Results (Default settings):
+### Results (Default settings, while idle):
 | Model        | CPU     | GPU                     | FPS     |
 |--------------|---------|-------------------------|---------|
 | Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 80-120  |
