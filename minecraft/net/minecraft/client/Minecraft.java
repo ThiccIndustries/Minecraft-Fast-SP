@@ -448,7 +448,11 @@ public abstract class Minecraft implements Runnable
      */
     public static File getMinecraftDir()
     {
-        minecraftDir = getAppDir("minecraftFSP");
+        if (minecraftDir == null)
+        {
+            minecraftDir = getAppDir("minecraft");
+        }
+
         return minecraftDir;
     }
 
