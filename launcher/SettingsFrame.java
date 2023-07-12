@@ -69,7 +69,7 @@ public class SettingsFrame extends JDialog{
 		jvmOptions.setEnabled(false);
 		
 		JScrollPane jvmOptionsScrollPane = new JScrollPane(jvmOptions);
-		jvmOptionsScrollPane.setPreferredSize(new Dimension(380, 40));
+		jvmOptionsScrollPane.setPreferredSize(new Dimension(390, 40));
 		jvmOptionsScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		jvmOptionsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		
@@ -153,7 +153,7 @@ public class SettingsFrame extends JDialog{
 		
 		add(lower, BorderLayout.CENTER);
 		
-		this.getContentPane().setPreferredSize(new Dimension(400, 155));
+		this.getContentPane().setPreferredSize(new Dimension(410, 155));
 		pack();
 		
 		setLocationRelativeTo(null);
