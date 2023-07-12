@@ -35,12 +35,7 @@ public class EntityPlayerSP extends EntityPlayer
         field_21902_bL = new MouseFilter();
         mc = par1Minecraft;
         dimension = par4;
-
-        if (par3Session != null && par3Session.username != null && par3Session.username.length() > 0)
-        {
-            skinUrl = (new StringBuilder()).append("http://s3.amazonaws.com/MinecraftSkins/").append(par3Session.username).append(".png").toString();
-        }
-
+        skinUrl = Minecraft.getMinecraftDir() + "/skin.png";
         username = par3Session.username;
     }
 

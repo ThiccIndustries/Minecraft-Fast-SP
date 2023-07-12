@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.minecraft.client.Minecraft;
+
 public class EntityOtherPlayerMP extends EntityPlayer
 {
     private boolean isItemInUse;
@@ -20,7 +22,7 @@ public class EntityOtherPlayerMP extends EntityPlayer
 
         if (par2Str != null && par2Str.length() > 0)
         {
-            skinUrl = (new StringBuilder()).append("http://s3.amazonaws.com/MinecraftSkins/").append(par2Str).append(".png").toString();
+            skinUrl = Minecraft.getMinecraftDir() + "/skin.png";
         }
 
         noClip = true;

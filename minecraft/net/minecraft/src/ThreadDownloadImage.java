@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import javax.imageio.ImageIO;
@@ -24,37 +26,29 @@ class ThreadDownloadImage extends Thread
 
     public void run()
     {
-        HttpURLConnection httpurlconnection = null;
-
-        try
-        {
-            URL url = new URL(location);
-            httpurlconnection = (HttpURLConnection)url.openConnection();
-            httpurlconnection.setDoInput(true);
-            httpurlconnection.setDoOutput(false);
-            httpurlconnection.connect();
-
-            if (httpurlconnection.getResponseCode() / 100 == 4)
-            {
-                return;
-            }
-
-            if (buffer == null)
-            {
-                imageData.image = ImageIO.read(httpurlconnection.getInputStream());
-            }
-            else
-            {
-                imageData.image = buffer.parseUserSkin(ImageIO.read(httpurlconnection.getInputStream()));
-            }
-        }
-        catch (Exception exception)
-        {
-            exception.printStackTrace();
-        }
-        finally
-        {
-            httpurlconnection.disconnect();
-        }
+    	
+    	System.out.println("Stream resource: " + location);
+    	File f = new File(location);
+    	
+    	if(!f.exists()){
+    		System.out.println(location + " not found.");
+    		return;
+    	}
+    	
+    	try{
+    		FileInputStream is = new FileInputStream(f);
+    		if (buffer == null)
+    		{
+    			imageData.image = ImageIO.read(is);
+    		}
+    		else
+    		{
+    			imageData.image = buffer.parseUserSkin(ImageIO.read(is));
+    		}
+    		
+    		is.close();
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
     }
 }

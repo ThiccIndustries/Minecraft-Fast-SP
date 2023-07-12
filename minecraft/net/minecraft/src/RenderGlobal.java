@@ -2168,7 +2168,7 @@ public class RenderGlobal implements IWorldAccess
     {
         par1Entity.updateCloak();
 
-        if (par1Entity.skinUrl != null && par1Entity.skinUrl.startsWith("http"))
+        if (par1Entity.skinUrl != null)
         {
             renderEngine.obtainImageData(par1Entity.skinUrl, new ImageBufferDownload());
         }
@@ -2182,9 +2182,6 @@ public class RenderGlobal implements IWorldAccess
                 EntityPlayer entityplayer = (EntityPlayer)par1Entity;
                 ThreadDownloadImageData threaddownloadimagedata = renderEngine.obtainImageData(entityplayer.cloakUrl, new ImageBufferDownload());
                 renderEngine.releaseImageData(entityplayer.cloakUrl);
-                String s = (new StringBuilder()).append("http://optifine.net/capes/").append(entityplayer.username).append(".png").toString();
-                ThreadDownloadImage threaddownloadimage = new ThreadDownloadImage(threaddownloadimagedata, s, new ImageBufferDownload());
-                threaddownloadimage.start();
 
                 if (!Config.isShowCapes())
                 {

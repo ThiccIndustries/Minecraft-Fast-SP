@@ -2,6 +2,8 @@ package net.minecraft.src;
 
 import java.util.*;
 
+import net.minecraft.client.Minecraft;
+
 public abstract class EntityPlayer extends EntityLiving
 {
     /** Inventory of the player */
@@ -433,7 +435,7 @@ public abstract class EntityPlayer extends EntityLiving
 
     public void updateCloak()
     {
-        playerCloakUrl = (new StringBuilder()).append("http://s3.amazonaws.com/MinecraftCloaks/").append(username).append(".png").toString();
+    	playerCloakUrl = Minecraft.getMinecraftDir() + "/cape.png";
         cloakUrl = playerCloakUrl;
     }
 
