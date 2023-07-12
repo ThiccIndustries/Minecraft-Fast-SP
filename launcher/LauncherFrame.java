@@ -25,6 +25,7 @@ import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
 
 public class LauncherFrame extends JFrame {
 
@@ -44,7 +45,8 @@ public class LauncherFrame extends JFrame {
 		} catch (Exception e) {
 			System.out.println("!!! Failed to set look and feel !!!");
 		}
-
+		
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBackground(Color.BLACK);
 		Container c = getContentPane();
 		c.setPreferredSize(new Dimension(854, 480));
