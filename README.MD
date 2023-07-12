@@ -18,6 +18,7 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 * This is a standalone version of the game, and won't work with any other existing mods.  
 * Any previous .minecraft / minecraft folders should be renamed/removed before running the launcher.    
 * Multiplayer is not supported. Previous preformances mods of the game, such as Minecraft G4 edition, are sufficient to run the game well with chunk generation offloaded to another machine.  
+* A size of 16 is equivilant to a Legacy PE world, size 27 is equiviliant to an xbox 360 / ps3 world.
 
 ### Requirements:
 * Java 1.5.0_22
