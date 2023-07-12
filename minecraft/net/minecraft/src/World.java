@@ -358,8 +358,8 @@ public class World implements IBlockAccess
 	        	System.out.println("checking chunk: " + -cx + ", " + -cy);
 	        	int result = findRespawnHeight((-cx * 16) + 8, (-cy * 16) + 8);
 	        	if(result != -1){
-	        		cxr = cx;
-	        		cyr = cy;
+	        		cxr = -cx;
+	        		cyr = -cy;
 	        		j = result;
 	        		break;
 	        	}
@@ -371,8 +371,8 @@ public class World implements IBlockAccess
 	        	System.out.println("checking chunk: " + cx + ", " + -cy);
 	        	result = findRespawnHeight((cx * 16) + 8, (-cy * 16) + 8);
 	        	if(result != -1){
-	        		cxr = -cx;
-	        		cyr = cy;
+	        		cxr = cx;
+	        		cyr = -cy;
 	        		j = result;
 	        		break;
 	        	}
@@ -391,8 +391,8 @@ public class World implements IBlockAccess
 	        	System.out.println("checking chunk: " + -cx + ", " + cy);
 	        	int result = findRespawnHeight((-cx * 16) + 8, (cy * 16) + 8);
 	        	if(result != -1){
-	        		cxr = cx;
-	        		cyr = -cy;
+	        		cxr = -cx;
+	        		cyr = cy;
 	        		j = result;
 	        		break;
 	        	}
@@ -404,8 +404,8 @@ public class World implements IBlockAccess
 	        	System.out.println("checking chunk: " + cx + ", " + cy);
 	        	result = findRespawnHeight((cx * 16) + 8, (cy * 16) + 8);
 	        	if(result != -1){
-	        		cxr = -cx;
-	        		cyr = -cy;
+	        		cxr = cx;
+	        		cyr = cy;
 	        		j = result;
 	        		break;
 	        	}
@@ -420,11 +420,14 @@ public class World implements IBlockAccess
         if(j == -1)
         	j = 62;
         j+=2;
+        
+        System.out.println("spawning: " + ((cxr * 16) + 8) + " " + ((cyr * 16) + 8));
         worldInfo.setSpawnPosition((cxr * 16) + 8, j, (cyr * 16) + 8);
         findingSpawnPoint = false;
     }
     
     public int findRespawnHeight(int x, int y){
+    	System.out.println("checking: " + x + ", " + y);
     	int j = 255;
     	int result;
     	while(j > 60){
