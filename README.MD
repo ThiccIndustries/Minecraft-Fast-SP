@@ -3,7 +3,8 @@
 ### About:
 A singleplayer mod of Minecraft 1.2.5 with optimizations for slow computers.  
 Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any computer that struggles with singleplayer.  
-This is a standalone version of the game, and won't work with any other existing mods.
+This is a standalone version of the game, and won't work with any other existing mods.  
+Any previous .minecraft / minecraft folders should be renamed/removed before running the launcher.  
 ### Requirements:
 * Java 1.5.0_22
 * 256mb of ram
