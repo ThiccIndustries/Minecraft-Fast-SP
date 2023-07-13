@@ -87,6 +87,7 @@ public class LauncherFrame extends JFrame {
 		tp.add(lp, BorderLayout.WEST);
 		add(cp, BorderLayout.CENTER);
 		tp.add(mp, BorderLayout.EAST);
+		getRootPane().setDefaultButton(mp.play);
 		pack();
 		
 		setLocationRelativeTo(null);

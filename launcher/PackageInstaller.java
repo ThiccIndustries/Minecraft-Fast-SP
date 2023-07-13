@@ -25,6 +25,10 @@ public class PackageInstaller {
 		GameDirectory = dir;
 	}
 	
+	public String GetGameDirectory(){
+		return GameDirectory;
+	}
+	
 	public boolean RestoreBackup() {
 		System.out.println("Restoring backup...");
 		if(!VerifyInstallation("/previous/")) {
@@ -180,12 +184,15 @@ public class PackageInstaller {
 		return dir.delete();
 	}
 	
-	private boolean CopyFile(String in, String out) {
+	public boolean CopyFile(String in, String out) {
 		File inFile = new File(in);
 		File outFile = new File(out);
 		
 		if(!inFile.exists())
 			return false;
+		
+		if(outFile.exists())
+			outFile.delete();
 		
 		if(inFile.isDirectory()) {
 			outFile.mkdir();

@@ -27,7 +27,7 @@ public class Util {
 
 	public static String getWorkingDirectory() {
 		if (workDir == null)
-			workDir = getWorkingDirectory("minecraft");
+			workDir = getWorkingDirectory("minecraftfsp");
 		return workDir;
 	}
 

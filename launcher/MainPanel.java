@@ -13,13 +13,15 @@ public class MainPanel extends JPanel{
 	
 	public JButton play;
 	public JButton settings;
+
 	public LauncherFrame launcher;
 	
 	public MainPanel(LauncherFrame lf) {
 		launcher = lf;
 			
-		GridLayout l = new GridLayout(2, 1);
-		l.setVgap(10);
+		GridLayout l = new GridLayout(2, 2);
+		l.setVgap(5);
+		l.setHgap(5);
 		setLayout(l);
 		
 		setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 26));
@@ -39,7 +41,6 @@ public class MainPanel extends JPanel{
 		    }
 		});
 		
-		play.setPreferredSize(settings.getSize());
 		add(settings);
 		add(play);
 		
