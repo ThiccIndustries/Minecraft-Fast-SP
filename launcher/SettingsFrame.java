@@ -34,7 +34,7 @@ import javax.swing.filechooser.FileFilter;
 public class SettingsFrame extends JDialog{
 	private JCheckBox separate;
 	private JCheckBox console;
-	private JButton cape, skin, restore, install;
+	private JButton restore, install;
 	private JTextArea jvmOptions;
 	private LauncherFrame launcher;
 	private JLabel label;
@@ -54,8 +54,6 @@ public class SettingsFrame extends JDialog{
 		setLayout(new BorderLayout());;
 		setAlwaysOnTop(true);
 		
-		cape = new JButton("Set Cape");
-		skin = new JButton("Set Skin");
 		install = new JButton("Install Package");
 		restore = new JButton("Restore Backup");
 		
@@ -74,58 +72,6 @@ public class SettingsFrame extends JDialog{
 		jvmOptionsScrollPane.setPreferredSize(new Dimension(390, 40));
 		jvmOptionsScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		jvmOptionsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		
-		cape.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		    	JFileChooser chooser = new JFileChooser(System.getProperty("user.home","."));
-		    	setAlwaysOnTop(false);
-		    	FileFilter pngfilter = new FileFilter(){
-		    		public boolean accept(File f){
-		    	        if(f.isDirectory()) return true;
-		    	        else if(f.getName().endsWith(".png")) return true;
-		    	            else return false;
-		    	    }
-		    	    public String getDescription(){
-		    	        return "Cape files";
-		    	    }
-		    	};
-		    	
-		    	chooser.setFileFilter(pngfilter);
-		    	if(chooser.showDialog(null, "Select") == JFileChooser.APPROVE_OPTION){
-		    		boolean res = launcher.GetPackageInstaller().CopyFile(chooser.getSelectedFile().getAbsolutePath(), launcher.GetPackageInstaller().GetGameDirectory() + "/cape.png");
-		    		if(res)
-		    			System.out.println("Selected cape file: " + chooser.getSelectedFile().getAbsolutePath());
-		    		else
-		    			System.out.println("Unable to copy cape file: " + chooser.getSelectedFile().getAbsolutePath());
-		    	}
-		    }
-		});
-		
-		skin.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		    	JFileChooser chooser = new JFileChooser(System.getProperty("user.home","."));
-		    	setAlwaysOnTop(false);
-		    	FileFilter pngfilter = new FileFilter(){
-		    		public boolean accept(File f){
-		    	        if(f.isDirectory()) return true;
-		    	        else if(f.getName().endsWith(".png")) return true;
-		    	            else return false;
-		    	    }
-		    	    public String getDescription(){
-		    	        return "Skin files";
-		    	    }
-		    	};
-		    	
-		    	chooser.setFileFilter(pngfilter);
-		    	if(chooser.showDialog(null, "Select") == JFileChooser.APPROVE_OPTION){
-		    		boolean res = launcher.GetPackageInstaller().CopyFile(chooser.getSelectedFile().getAbsolutePath(), launcher.GetPackageInstaller().GetGameDirectory() + "/skin.png");
-		    		if(res)
-		    			System.out.println("Selected skin file: " + chooser.getSelectedFile().getAbsolutePath());
-		    		else
-		    			System.out.println("Unable to copy skin file: " + chooser.getSelectedFile().getAbsolutePath());
-		    	}
-		    }
-		});
 		
 		install.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -171,8 +117,6 @@ public class SettingsFrame extends JDialog{
 
 		upper.add(install);
 		upper.add(restore);
-		upper.add(skin);
-		upper.add(cape);
 		
 		getRootPane().setDefaultButton(install);
 		JLabel updateDir = new JLabel("<html><a href='.'>http://github.com/ThiccIndustries/Minecraft-Fast-SP/releases</html>");
