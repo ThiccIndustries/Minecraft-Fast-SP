@@ -9,10 +9,10 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 ### Results (Default settings):
 | Model        | CPU     | GPU                     | FPS     |
 |--------------|---------|-------------------------|---------|
-| Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 80-120  |
-| iBook G4     | 1.33Ghz | Radeon Mobility 9550    | 70-80   |
+| Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 60-120  |
+| iBook G4     | 1.33Ghz | Radeon Mobility 9550    | 40-80   |
 | MacBook      | 2.4Ghz  | GMA X3100               | 50-60   |
-| Thinkpad T43 | 1.86Ghz | Radeon Mobility x300    | 160-180 |
+| Thinkpad T43 | 1.86Ghz | Radeon Mobility x300    | 100-120 |
 
 ### Notes:
 * This is a standalone version of the game, and won't work with any other existing mods.  
