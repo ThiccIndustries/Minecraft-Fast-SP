@@ -185,7 +185,7 @@ public class GameSettings
     	System.out.println("new active settings");
     	active = this;
         ofRenderDistanceFine = 32;
-        ofFogType = 1;
+        ofFogType = 3;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
         ofMipmapLinear = false;
@@ -311,7 +311,7 @@ public class GameSettings
     {
     	active = this;
         ofRenderDistanceFine = 32;
-        ofFogType = 1;
+        ofFogType = 3;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
         ofMipmapLinear = false;
@@ -2884,7 +2884,7 @@ public class GameSettings
         guiScale = 0;
         particleSetting = 0;
         ofRenderDistanceFine = 32;
-        ofFogType = 1;
+        ofFogType = 3;
         ofFogStart = 0.8F;
         ofMipmapLevel = 0;
         ofMipmapLinear = false;
