@@ -60,7 +60,7 @@ public class GuiOptions extends GuiScreen
         }
 
         controlList.add(new GuiButton(101, width / 2 - 100, (height / 6 + 96) - 6, 98, 20, stringtranslate.translateKey("options.video")));
-        controlList.add(new GuiButton(201, width / 2 + 2, (height / 6 + 96) - 6, 98, 20, "Preformance..."));
+        controlList.add(new GuiButton(201, width / 2 + 2, (height / 6 + 96) - 6, 98, 20, "Performance..."));
         controlList.add(new GuiButton(100, width / 2 - 100, (height / 6 + 120) - 6, stringtranslate.translateKey("options.controls")));
         controlList.add(new GuiButton(102, width / 2 - 100, (height / 6 + 144) - 6, stringtranslate.translateKey("options.language")));
         controlList.add(new GuiButton(200, width / 2 - 100, height / 6 + 168, stringtranslate.translateKey("gui.done")));
