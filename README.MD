@@ -21,7 +21,7 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 
 ### Requirements:
 * Java 1.5.0_22
-* 256mb of ram
+* 256mb of free memory
 ### Installation:
 * Download the Minecraft-Fast-SP file for your platform from the releases section on the right.
 
