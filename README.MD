@@ -9,7 +9,7 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 ### Results (Default settings, Native fullscreen):
 | Model        | CPU     | GPU                     | FPS     |
 |--------------|---------|-------------------------|---------|
-| Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 60-120  |
+| Powerbook G4 | 1.5Ghz  | Radeon Mobility 9600 XT | 70-120  |
 | iBook G4     | 1.33Ghz | Radeon Mobility 9550    | 40-80   |
 | MacBook      | 2.4Ghz  | GMA X3100               | 50-60   |
 | Thinkpad T43 | 1.86Ghz | Radeon Mobility x300    | 50-70   |
