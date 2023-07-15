@@ -40,7 +40,5 @@ Mainly created/Optimized for PowerPC Macintosh Computers, but should work on any
 * Option to disable occlusion while still using "Advanced" OpenGL
 * Option to preload textures in VRAM on world startup to reduce stuttering as new textures load off disk
 
-Modifications are licensed under the:
+Modifications & Launcher are licensed under the:
 ThiccIndustries do-whatever-you-want-I-dont-care license
-
-
